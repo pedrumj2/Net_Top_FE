@@ -208,7 +208,7 @@ var data = {
 
 window.onload = function() {
 
-  var x = document.getElementsByClassName("button")[0];
+  var x = document.getElementById("button");
   x.onclick = temp;
   var x = document.getElementById("int");
   x.value = 5;
@@ -217,6 +217,7 @@ window.onload = function() {
   
   var x = document.getElementById("start");
   x.value = 20;
+    document.getElementById("button").click();
 
 }
 
