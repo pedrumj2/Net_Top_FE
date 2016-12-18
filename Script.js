@@ -20,18 +20,22 @@ temp = function(evt){
     //xmlHttp.send( null );
   //  alert( xmlHttp.responseText);
   //  window.history.pushState("object or string", "Title", "");
-  x =  document.getElementById("int").value;
+  x =  parseInt(document.getElementById("int").value);
   y =  document.getElementById("tstart").value;
    z =  document.getElementById("start").value;
   g =  parseInt(y)+parseInt(z);
+  if (x>1000){
+    alert("please choose a smaller value for interval");
+    }
+    else{
     //xmlHttp.onreadystatechange=handleStateChange;
-      xmlHttp.open( "GET", "/cgi-bin/a.cgi?intTime=" + x + "&startTime=" +String(g), false );
-    xmlHttp.send("fasd" );
+      xmlHttp.open( "GET", "/cgi-bin/a.cgi?intTime=" + String(x) + "&startTime=" +String(g), false );
+    xmlHttp.send("" );
     str =xmlHttp.responseText;
     var x = document.getElementById("palet");
     x.innerHTML = str;
     eval(str);
-   
+   }
     
   /*  str = `var nodes = new vis.DataSet([
 {id: 1, value: 3, label: "192.168.202.79"},
